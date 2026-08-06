@@ -63,7 +63,7 @@ class NowPlayingScreen extends StatelessWidget {
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(14),
                     image: const DecorationImage(
-                      image: AssetImage('Assets/albumpic.jpeg'),
+                      image: AssetImage('Assets/boston.jpeg'),
   fit: BoxFit.cover,
 ),
                     boxShadow: [
@@ -89,7 +89,7 @@ class NowPlayingScreen extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: const [
                           Text(
-                            'Akasaka Sad',
+                            'The Boston Drama',
                             style: TextStyle(
                               color: Colors.white,
                               fontSize: 22,
@@ -98,7 +98,7 @@ class NowPlayingScreen extends StatelessWidget {
                           ),
                           SizedBox(height: 4),
                           Text(
-                            'Rina Sawayama',
+                            'Typecast',
                             style: TextStyle(
                               color: Colors.white70,
                               fontSize: 15,
@@ -233,7 +233,7 @@ class NowPlayingScreen extends StatelessWidget {
                             color: Colors.white70, size: 20),
                         SizedBox(width: 6),
                         Text(
-                          'SAWAYAMA',
+                          'TYPECAST',
                           style: TextStyle(
                               color: Colors.white70,
                               fontSize: 12,
