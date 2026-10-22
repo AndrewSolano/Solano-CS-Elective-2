@@ -1,15 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import 'package:pokedex/providers/pokemon_provider.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:pokedex/screens/pokemon_list_screen.dart';
 
 void main() {
-  runApp(
-    ChangeNotifierProvider(
-      create: (_) => PokemonProvider()..fetchPokemon(),
-      child: const PokedexApp(),
-    ),
-  );
+  // ProviderScope is where all Riverpod provider state lives.
+  runApp(const ProviderScope(child: PokedexApp()));
 }
 
 class PokedexApp extends StatelessWidget {

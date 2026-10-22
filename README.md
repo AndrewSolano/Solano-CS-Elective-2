@@ -1,17 +1,20 @@
-# pokedex
+# Pokédex (Midterm: Riverpod)
 
-A new Flutter project.
+Flutter Pokédex using **flutter_riverpod** for all app state.
 
-## Getting Started
+## Features
+- Pokémon list fetched asynchronously (loading / error / empty / success UI), pull-to-refresh and refresh button
+- Nicknames (add / edit / remove), original name always kept
+- Favorites with heart on every card and a collapsible panel on every screen
+- Filter by Pokémon type (chips) with a clear option
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## State (lib/providers)
+| Provider | Type | Responsibility |
+|---|---|---|
+| `pokemonProvider` | `Notifier<PokemonState>` | `fetchPokemon()` and list status |
+| `selectedPokemonIdProvider` | `Notifier<int?>` | which Pokémon the detail page shows |
+| `nicknameProvider` | `Notifier<Map<int,String>>` | `setNickname`, `removeNickname` |
+| `favoritesProvider` | `Notifier<Set<int>>` | `toggleFavorite`, `removeFavorite` |
+| `favoritesPanelExpandedProvider` | `Notifier<bool>` | panel expand/collapse |
+| `typeFilterProvider` | `Notifier<String?>` | `selectType`, `clearFilter` |
+| `filteredPokemonProvider`, `availableTypesProvider`, `favoritePokemonProvider`, `selectedPokemonProvider` | `Provider` (derived) | computed from the above |
